@@ -2,7 +2,7 @@
 
 module.exports = {
   url: 'https://rnstnqry.com',
-  title: 'Earnest Inquiry',
+  title: 'Rnst Nqry',
   subtitle: 'in the pursuit of Freedom and other entrained endeavours',
   copyright: '© All rights reserved.',
   disqusShortname: '',
@@ -25,7 +25,7 @@ module.exports = {
   author: {
     name: 'Rnst Nqry',
     photo: '/photo.jpg',
-    bio: 'Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu.',
+    bio: 'in the pursuit of Freedom and other entrained endeavours.',
     contacts: {
       email: '#',
       telegram: '#',
