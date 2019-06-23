@@ -93,6 +93,12 @@ module.exports = {
       options: {
         plugins: [
           {
+            resolve: 'gatsby-remark-katex',
+            options: {
+              strict: 'ignore'
+            }
+          },
+          {
             resolve: 'gatsby-remark-images',
             options: { maxWidth: 960 }
           },
@@ -100,6 +106,7 @@ module.exports = {
             resolve: 'gatsby-remark-responsive-iframe',
             options: { wrapperStyle: 'margin-bottom: 1.0725rem' }
           },
+          'gatsby-remark-autolink-headers',
           'gatsby-remark-prismjs',
           'gatsby-remark-copy-linked-files',
           'gatsby-remark-smartypants'
@@ -112,12 +119,17 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-netlify-cms',
       options: {
-        modulePath: `${__dirname}/src/cms/cms.js`,
+        modulePath: `${__dirname}/src/cms/index.js`,
       }
     },
     {
-      resolve: 'gatsby-plugin-google-analytics',
-      options: { trackingId: siteConfig.googleAnalyticsId }
+      resolve: 'gatsby-plugin-google-gtag',
+      options: {
+        trackingIds: [siteConfig.googleAnalyticsId],
+        pluginConfig: {
+          head: true,
+        },
+      },
     },
     {
       resolve: 'gatsby-plugin-sitemap',
@@ -126,7 +138,7 @@ module.exports = {
           {
             site {
               siteMetadata {
-                url
+                siteUrl: url
               }
             }
             allSitePage(
@@ -144,7 +156,7 @@ module.exports = {
         `,
         output: '/sitemap.xml',
         serialize: ({ site, allSitePage }) => allSitePage.edges.map((edge) => ({
-          url: site.siteMetadata.url + edge.node.path,
+          url: site.siteMetadata.siteUrl + edge.node.path,
           changefreq: 'daily',
           priority: 0.7
         }))
@@ -173,6 +185,7 @@ module.exports = {
           camelCase: false,
         }
       }
-    }
+    },
+    'gatsby-plugin-flow',
   ]
 };
