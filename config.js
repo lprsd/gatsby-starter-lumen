@@ -3,7 +3,7 @@
 module.exports = {
   url: 'https://rnstnqry.com',
   title: 'Rnst Nqry',
-  subtitle: 'in the pursuit of Freedom and other entrained endeavours',
+  subtitle: 'in the pursuit of True Freedom and other entrained endeavours',
   copyright: '© All rights reserved.',
   disqusShortname: '',
   postsPerPage: 4,
@@ -25,14 +25,14 @@ module.exports = {
   author: {
     name: 'Rnst Nqry',
     photo: '/photo.jpg',
-    bio: 'in the pursuit of Freedom and other entrained endeavours.',
+    bio: 'To nurture Curiosity and to pursue Freedom.',
     contacts: {
-      email: '#',
-      telegram: '#',
-      twitter: '#',
-      github: '#',
-      rss: '#',
-      vkontakte: '#'
+      email: 'hello@rnstnqry.com',
+      // telegram: '#',
+      twitter: 'rnstnqry',
+      // github: '#',
+      // rss: '#',
+      // vkontakte: '#'
     }
   }
 };
